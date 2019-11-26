@@ -1,0 +1,62 @@
+<?php
+/**
+ * Middleware to test if the logged in use is active or not
+ * PHP Version 7.3+
+ *
+ * @category Middleware
+ * @package  MMS
+ * @author   Barry Rayfield <barry.rayfield@gmail.com>
+ * @license  http://unavailable.unk unknown
+ * @link     unavailable
+ */
+
+namespace App\Http\Middleware;
+
+use Auth;
+use Closure;
+
+// use Illuminate\Support\Facades\Auth;
+/**
+ * Middleware to test if the logged in use is active or not
+ *
+ * @category Middleware
+ * @package  MMS
+ * @author   Barry Rayfield <barry.rayfield@gmail.com>
+ * @license  http://unavailable.unk unknown
+ * @link     unavailable
+ */
+class ModuleMiddleware
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param \Illuminate\Http\Request $request In bound HTTP Request
+     * @param \Closure                 $next    Destination web page
+     *
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        // if (Auth::check()) {
+        //     if (Auth::user()->isAdmin()) {
+        //         return $next($request);
+        //     }
+        // }
+        // $user = Auth::user();
+        error_log(date('m/d/Y h:i:s a', time()) . " ModuleMiddleware: Entering" . PHP_EOL, 3, "D:\wwwroot\mms\dev\sql\php_error.log");
+        if (Auth::check()) {
+            error_log(date('m/d/Y h:i:s a', time()) . " ModuleMiddleware: is_Active = " . Auth::user()->isActive() .PHP_EOL, 3, "D:\wwwroot\mms\dev\sql\php_error.log");
+            if (!Auth::user()->isActive()) {
+                error_log(date('m/d/Y h:i:s a', time()) . " ModuleMiddleware: redirecting to inactive" . PHP_EOL, 3, "D:\wwwroot\mms\dev\sql\php_error.log");
+                return redirect('/inactive');
+            }
+            error_log(date('m/d/Y h:i:s a', time()) . " ModuleMiddleware: has_Access = " . Auth::user()->hasAccess() .PHP_EOL, 3, "D:\wwwroot\mms\dev\sql\php_error.log");
+            if (!Auth::user()->hasAccess()) {
+                error_log(date('m/d/Y h:i:s a', time()) . " ModuleMiddleware: redirecting to no access" . PHP_EOL, 3, "D:\wwwroot\mms\dev\sql\php_error.log");
+                return redirect('/noaccess');
+            }
+        }
+        error_log(date('m/d/Y h:i:s a', time()) . " ModuleMiddleware: Exiting" . PHP_EOL, 3, "D:\wwwroot\mms\dev\sql\php_error.log");
+        return $next($request);
+    }
+}

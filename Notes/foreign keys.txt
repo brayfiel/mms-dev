@@ -1,0 +1,64 @@
+*users                belongsTo('App\Surname')                       App\Surname           users()                             hasMany('App\User')                         foreign(surname_id)           references(id) on(surnames)              users_surname_id_foreign
+*users                belongsTo('App\Suffix')                        App\Suffix            users()                             hasMany('App\User')                         foreign(suffix_id)            references(id) on(suffixes)              users_suffix_id_foreign
+*users                belongsTo('App\MmsGlobal')                     App\MmsGlobal         users()                             hasMany('App\User')                         foreign(mms_global_id)        references(id) on(mms_globals)           users_mms_global_id_foreign
+*users                belongsTo('App\Users', 'created_by_id')        App\Users             createdBy()                         hasMany('App\Users', 'created_by_id')
+*users                belongsTo('App\Users', 'last_editted_by_id')   App\Users             lastEdittedBy()                     hasMany('App\Users', 'last_editted_by_id')
+
+*mailing_classes      belongsTo('App\Users', 'created_by_id')        App\Users             mailingClassesCreatedBy()           hasMany('App\Users', 'created_by_id')       foreign(created_by_id)        references(id) on(users)                 mailing_classes_created_by_id_foreign
+*mailing_classes      belongsTo('App\Users', 'last_editted_by_id')   App\Users             mailingClassesLastEdittedBy()       hasMany('App\Users', 'last_editted_by_id')  foreign(last_editted_by_id)   references(id) on(users)                 mailing_classes_last_editted_by_id_foreign
+
+*membership_types     belongsTo('App\Users', 'created_by_id')        App\Users             membershipTypesCreatedBy()          hasMany('App\Users', 'created_by_id')       foreign(created_by_id)        references(id) on(users)                 membership_types_created_by_id_foreign
+*membership_types     belongsTo('App\Users', 'last_editted_by_id')   App\Users             membershipTypesLastEdittedBy()      hasMany('App\Users', 'last_editted_by_id')  foreign(last_editted_by_id)   references(id) on(users)                 membership_types_last_editted_by_id_foreign
+
+*phone_types          belongsTo('App\Users', 'created_by_id')        App\Users             phoneTypesCreatedBy()               hasMany('App\Users', 'created_by_id')       foreign(created_by_id)        references(id) on(users)                 phone_types_created_by_id_foreign
+*phone_types          belongsTo('App\Users', 'last_editted_by_id')   App\Users             phoneTypesLastEdittedBy()           hasMany('App\Users', 'last_editted_by_id')  foreign(last_editted_by_id)   references(id) on(users)                 phone_types_last_editted_by_id_foreign
+
+*membership_statuses  belongsTo('App\Users', 'created_by_id')        App\Users             membershipStatusesCreatedBy()       hasMany('App\Users', 'created_by_id')       foreign(created_by_id)        references(id) on(users)                 membership_statuses_created_by_id_foreign
+*membership_statuses  belongsTo('App\Users', 'last_editted_by_id')   App\Users             membershipStatusesLastEdittedBy()   hasMany('App\Users', 'last_editted_by_id')  foreign(last_editted_by_id)   references(id) on(users)                 membership_statuses_last_editted_by_id_foreign
+
+*surnames             belongsTo('App\Users', 'created_by_id')        App\Users             surnamesCreatedBy()                 hasMany('App\Users', 'created_by_id')       foreign(created_by_id)        references(id) on(users)                 surnames_created_by_id_foreign
+*surnames             belongsTo('App\Users', 'last_editted_by_id')   App\Users             surnamesLastEdittedBy()             hasMany('App\Users', 'last_editted_by_id')  foreign(last_editted_by_id)   references(id) on(users)                 surnames_last_editted_by_id_foreign
+
+*vip_codes            belongsTo('App\Users', 'created_by_id')        App\Users             vipCodesCreatedBy()                 hasMany('App\Users', 'created_by_id')       foreign(created_by_id)        references(id) on(users)                 vip_codes_created_by_id_foreign
+*vip_codes            belongsTo('App\Users', 'last_editted_by_id')   App\Users             vipCodesLastEdittedBy()             hasMany('App\Users', 'last_editted_by_id')  foreign(last_editted_by_id)   references(id) on(users)                 vip_codes_last_editted_by_id_foreign
+
+*zip_codes            belongsTo('App\Users', 'created_by_id')        App\Users             zipCodesCreatedBy()                 hasMany('App\Users', 'created_by_id')       foreign(created_by_id)        references(id) on(users)                 zip_codes_created_by_id_foreign
+*zip_codes            belongsTo('App\Users', 'last_editted_by_id')   App\Users             zipCodesLastEdittedBy()             hasMany('App\Users', 'last_editted_by_id')  foreign(last_editted_by_id)   references(id) on(users)                 zip_codes_last_editted_by_id_foreign
+
+*logs                 belongsTo('App\Users', 'created_by_id')        App\Users             logsCreatedBy()                     hasMany('App\Users', 'created_by_id')       foreign(created_by_id)        references(id) on(users)                 logs_created_by_id_foreign
+*logs                 belongsTo('App\Users', 'last_editted_by_id')   App\Users             logsLastEdittedBy()                 hasMany('App\Users', 'last_editted_by_id')  foreign(last_editted_by_id)   references(id) on(users)                 logs_last_editted_by_id_foreign
+
+*suffixes             belongsTo('App\Users', 'created_by_id')        App\Users             suffixesCreatedBy()                 foreign(created_by_id)        references(id) on(users)                 suffixes_created_by_id_foreign
+*suffixes             belongsTo('App\Users', 'last_editted_by_id')   App\Users             suffixesLastEdittedBy()             foreign(last_editted_by_id)   references(id) on(users)                 suffixes_last_editted_by_id_foreign
+
+*states               belongsTo('App\Users', 'created_by_id')        App\Users             statesCreatedBy()                   foreign(created_by_id)        references(id) on(users)                 states_created_by_id_foreign
+*states               belongsTo('App\Users', 'last_editted_by_id')   App\Users             statesLastEdittedBy()               foreign(last_editted_by_id)   references(id) on(users)                 states_last_editted_by_id_foreign
+
+*mms_globals          belongsTo('App\State')                         App\State             mmsGlobals()                        foreign(state_id)             references(id) on(states)                mms_globals_state_id_foreign
+*mms_globals          belongsTo('App\ZipCode')                       App\ZipCode           mmsGlobals()                        foreign(zip_code_id)          references(id) on(zip_codes)             mms_globals_zip_code_id_foreign
+*mms_globals          belongsTo('App\Users', 'created_by_id')        App\Users             mmsGlobalsCreatedBy()               foreign(created_by_id)        references(id) on(users)                 mms_globals_created_by_id_foreign
+*mms_globals          belongsTo('App\Users', 'last_editted_by_id')   App\Users             mmsGlobalsLastEdittedBy()           foreign(last_editted_by_id)   references(id) on(users)                 mms_globals_last_editted_by_id_foreign
+
+members              belongsTo('App\MembershipType')                App\MembershipType    members()                           foreign(membership_type_id)   references(id) on(membership_statuses)   members_membership_type_id_foreign
+members              belongsTo('App\MembershipStatus')              App\MembershipStatus  members()                           foreign(membership_status_id) references(id) on(users)                 members_membership_status_id_foreign
+members              belongsTo('App\Users', 'created_by_id')        App\Users             mmsGlobalsCreatedBy()               foreign(created_by_id)        references(id) on(users)                 members_created_by_id_foreign
+members              belongsTo('App\Users', 'last_editted_by_id')   App\Users             mmsGlobalsLastEdittedBy()           foreign(last_editted_by_id)   references(id) on(users)                 members_last_editted_by_id_foreign
+
+member_addresses     belongsTo('App\Member')                        App\Member            memberAddresses()                   foreign(member_id)            references(id) on(members)               member_addresses_member_id_foreign
+member_addresses     belongsTo('App\State')                         App\State             memberAddresses()                   foreign(state_id)             references(id) on(states)                member_addresses_state_id_foreign
+member_addresses     belongsTo('App\ZipCode')                       App\ZipCode           memberAddresses()                   foreign(zip_code_id)          references(id) on(zip_codes)             member_addresses_zip_code_id_foreign
+member_addresses     belongsTo('App\MailingClass')                  App\MailingClass      memberAddresses()                   foreign(mailing_class_id)     references(id) on(mailing_classes)       member_addresses_mailing_class_id_foreign
+member_addresses     belongsTo('App\Users', 'created_by_id')        App\Users             memberAddressesCreatedBy()          foreign(created_by_id)        references(id) on(users)                 member_addresses_created_by_id_foreign
+member_addresses     belongsTo('App\Users', 'last_editted_by_id')   App\Users             memberAddressesLastEdittedBy()      foreign(last_editted_by_id)   references(id) on(users)                 member_addresses_last_editted_by_id_foreign
+
+member_names         belongsTo('App\Member')                        App\Member            memberNames()                       foreign(member_id)            references(id) on(members)               member_names_member_id_foreign
+member_names         belongsTo('App\Surname')                       App\Surname           memberNames()                       foreign(surname_id)           references(id) on(surnames)              member_names_surname_id_foreign
+member_names         belongsTo('App\Suffix')                        App\Suffix            memberNames()                       foreign(suffix_id)            references(id) on(suffixes)              member_names_suffix_id_foreign
+member_names         belongsTo('App\VipCodes')                      App\VipCodes          memberNames()                       foreign(vip_code_id)          references(id) on(vip_codes)             member_names_vip_code_id_foreign
+member_names         belongsTo('App\Users', 'created_by_id')        App\Users             memberNamesCreatedBy()              foreign(created_by_id)        references(id) on(users)                 member_names_created_by_id_foreign
+member_names         belongsTo('App\Users', 'last_editted_by_id')   App\Users             memberNamesLastEdittedBy()          foreign(last_editted_by_id)   references(id) on(users)                 member_names_last_editted_by_id_foreign
+
+member_phones        belongsTo('App\Member')                        App\Member            memberPhones()                      foreign(member_id)            references(id) on(members)               member_phones_member_id_foreign
+member_phones        belongsTo('App\PhoneType')                     App\PhoneType         memberPhones()                      foreign(phone_types_id)       references(id) on(phone_types)           member_phones_phone_types_id_foreign
+member_phones        belongsTo('App\Users', 'created_by_id')        App\Users             memberPhonesCreatedBy()             foreign(created_by_id)        references(id) on(users)                 member_phones_created_by_id_foreign
+member_phones        belongsTo('App\Users', 'last_editted_by_id')   App\Users             memberPhonesLastEdittedBy()         foreign(last_editted_by_id)   references(id) on(users)                 member_phones_last_editted_by_id_foreign
