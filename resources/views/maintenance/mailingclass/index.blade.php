@@ -63,7 +63,7 @@
     @endif
 
     <div class="row mt-4">
-        <div class="offset-sm-4 col-sm-4">
+        <div class="col-sm-auto m-sm-auto">
             {{ $mailingClasses->links() }}
             {{-- {{ $mailingClasses->render() }} --}}
         </div>

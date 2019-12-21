@@ -30,6 +30,7 @@ class State extends Model
         'state_abbrev',
         'state_full',
         'state_full_alt',
+        'state_territory',
         'created_by_id',
         'last_editted_by_id',
     ];

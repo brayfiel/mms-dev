@@ -44,28 +44,38 @@ class CreateMemberNamesTable extends Migration
                     ->comment('Primary contact for this membership.');
                 $table->bigInteger('surname_id')
                     ->unsigned()
+                    ->nullable()
                     ->comment('Pointer to the surname table.');
                 $table->string('first_name')
+                    ->nullable()
                     ->comment('The first name of this member.');
                 $table->string('last_name')
                     ->comment('The last name of this member.');
                 $table->bigInteger('suffix_id')
                     ->unsigned()
+                    ->nullable()
                     ->comment('Pointer to the suffix table.');
                 $table->char('sex', 1)
+                    ->nullable()
                     ->comment('Sex of member.');
                 $table->boolean('mens_club')
+                    ->nullable()
                     ->comment('Is person a member of the men club?');
                 $table->boolean('sisterhood')
+                    ->nullable()
                     ->comment('Is person a member of the sisterhood?');
                 $table->boolean('hebrew_school')
+                    ->nullable()
                     ->comment('Is person in Hebrew school?');
                 $table->boolean('sunday_school')
+                    ->nullable()
                     ->comment('Is person in Sunday school?');
                 $table->bigInteger('vip_code_id')
+                    ->nullable()
                     ->unsigned()
                     ->comment('Pointer to VIP table.  Is person a VIP?');
                 $table->string('email')
+                    ->nullable()
                     ->comment('Email of member.');
                 $table->bigInteger('created_by_id')
                     ->unsigned()

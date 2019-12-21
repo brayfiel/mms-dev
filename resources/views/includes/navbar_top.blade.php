@@ -66,10 +66,13 @@
                             <a class="dropdown-item text-primary" href="{{ url('/maintenance/vipcode') }}">
                                 VIP Code
                             </a>
-                            <a class="dropdown-item text-primary" href="{{ url('mailingClassIndex') }}">
+                            <a class="dropdown-item text-primary" href="{{ url('/maintenance/state') }}">
+                                States
+                            </a>
+                            <a class="dropdown-item text-primary" href="{{ url('/maintenance/zipcode') }}">
                                 Zip Code
                             </a>
-                            <a class="dropdown-item text-primary" href="{{ url('mailingClassIndex') }}">
+                            <a class="dropdown-item text-primary" href="{{ url('/maintenance/organization') }}">
                                 Organization Configuration
                             </a>
                             <a class="dropdown-item text-primary" href="{{ url('mailingClassIndex') }}">

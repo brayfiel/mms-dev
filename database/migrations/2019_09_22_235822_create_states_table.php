@@ -43,6 +43,10 @@ class CreateStatesTable extends Migration
                     ->unique()
                     ->comment('Full name of the state.');
                 $table->string('state_full_alt')
+                    ->nullable(true)
+                    ->comment('Alternate spelling of the name of the state.');
+                $table->char('state_territory', 1)
+                    ->default('S')
                     ->comment('Alternate spelling of the name of the state.');
                 $table->bigInteger('created_by_id')
                     ->unsigned()

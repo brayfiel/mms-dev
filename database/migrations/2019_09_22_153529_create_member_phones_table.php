@@ -40,11 +40,14 @@ class CreateMemberPhonesTable extends Migration
                     ->unsigned()
                     ->comment('Pointer to the members table.');
                 $table->bigInteger('phone_types_id')
+                    ->nullable()
                     ->unsigned()
                     ->comment('Pointer to the phone_types table.');
                 $table->string('phone_number')
+                    ->nullable()
                     ->comment('Phone number of member.');
                 $table->string('phone_ext')
+                    ->nullable()
                     ->comment('Extension for the phone number.');
                 $table->bigInteger('created_by_id')
                     ->unsigned()

@@ -78,7 +78,7 @@ Route::group(
             'PhoneTypeController@setSearch'
         )->name('phonetype.setSearch');
         Route::resource('/maintenance/phonetype', 'PhoneTypeController');
-        // END:   ^ ^ ^ Routes for /maintenance/membershiptype ^ ^ ^
+        // END:   ^ ^ ^ Routes for /maintenance/phonetype ^ ^ ^
         // =======================================================
         // BEGIN: V V V Routes for /maintenance/membershipstatus V V V
         Route::get(
@@ -95,22 +95,6 @@ Route::group(
         )->name('membershipstatus.setSearch');
         Route::resource('/maintenance/membershipstatus', 'MembershipStatusController');
         // END:   ^ ^ ^ Routes for /maintenance/membershipstatus ^ ^ ^
-        // =======================================================
-        // BEGIN: V V V Routes for /maintenance/surname V V V
-        Route::get(
-            '/maintenance/membershipstatus/printall/{order}',
-            'MembershipStatusController@printAll'
-        )->name('membershipstatus.printall');
-        Route::get(
-            '/maintenance/membershipstatus/sortorder/{order}',
-            'MembershipStatusController@setSortOrder'
-        )->name('membershipstatus.sortorder');
-        Route::get(
-            '/maintenance/membershipstatus/setsearch/',
-            'MembershipStatusController@setSearch'
-        )->name('membershipstatus.setSearch');
-        Route::resource('/maintenance/membershipstatus', 'MembershipStatusController');
-        // END:   ^ ^ ^ Routes for /maintenance/surname ^ ^ ^
         // =======================================================
         // BEGIN: V V V Routes for /maintenance/surname V V V
         Route::get(
@@ -142,9 +126,9 @@ Route::group(
             'SuffixController@setSearch'
         )->name('suffix.setSearch');
         Route::resource('/maintenance/suffix', 'SuffixController');
-        // END:   ^ ^ ^ Routes for /maintenance/surname ^ ^ ^
+        // END:   ^ ^ ^ Routes for /maintenance/suffix ^ ^ ^
         // =======================================================
-        // BEGIN: V V V Routes for /maintenance/suffix V V V
+        // BEGIN: V V V Routes for /maintenance/vipcode V V V
         Route::get(
             '/maintenance/vipcode/printall/{order}',
             'VIPCodeController@printAll'
@@ -158,7 +142,56 @@ Route::group(
             'VIPCodeController@setSearch'
         )->name('vipcode.setSearch');
         Route::resource('/maintenance/vipcode', 'VIPCodeController');
-        // END:   ^ ^ ^ Routes for /maintenance/surname ^ ^ ^
+        // END:   ^ ^ ^ Routes for /maintenance/vipcode ^ ^ ^
+        // =======================================================
+        // BEGIN: V V V Routes for /maintenance/state V V V
+        Route::get(
+            '/maintenance/state/printall/{order}',
+            'StateController@printAll'
+        )->name('state.printall');
+        Route::get(
+            '/maintenance/state/sortorder/{order}',
+            'StateController@setSortOrder'
+        )->name('state.sortorder');
+        Route::get(
+            '/maintenance/state/setsearch/',
+            'StateController@setSearch'
+        )->name('state.setSearch');
+        Route::resource('/maintenance/state', 'StateController');
+        // END:   ^ ^ ^ Routes for /maintenance/state ^ ^ ^
+        // =======================================================
+        // BEGIN: V V V Routes for /maintenance/zipcode V V V
+        Route::get(
+            '/maintenance/zipcode/printall/{order}',
+            'ZipCodeController@printAll'
+        )->name('zipcode.printall');
+        Route::get(
+            '/maintenance/zipcode/sortorder/{order}',
+            'ZipCodeController@setSortOrder'
+        )->name('zipcode.sortorder');
+        Route::get(
+            '/maintenance/zipcode/setsearch/',
+            'ZipCodeController@setSearch'
+        )->name('zipcode.setSearch');
+        Route::resource('/maintenance/zipcode', 'ZipCodeController');
+        // END:   ^ ^ ^ Routes for /maintenance/zipcode ^ ^ ^
+        // =======================================================
+        // BEGIN: V V V Routes for /maintenance/organization V V V
+        Route::get(
+            '/maintenance/organization/printAll',
+            'OrganizationController@printAll'
+        )->name('organization.printall');
+        Route::get(
+            '/maintenance/organization/',
+            'OrganizationController@index'
+        )->name('organization.index');
+        Route::match(
+            ['put', 'patch'],
+            '/maintenance/organization/{organization}',
+            'OrganizationController@update'
+        )->name('organization.update');
+        // Route::resource('/maintenance/organization', 'OrganizationController');
+        // END:   ^ ^ ^ Routes for /maintenance/zipcode ^ ^ ^
         // =======================================================
         Route::get('/membership', 'MMS@membershipIndex');
         Route::get('/permanentpews', 'MMS@permanentPewIndex');

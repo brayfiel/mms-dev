@@ -1,0 +1,19 @@
+php composer how to remove a package:
+  https://www.google.com/search?q=php+composer+how+to+remove+a+package&rlz=1C1JZAP_enUS711US711&oq=php+composer+how+to+remove+a+package&aqs=chrome..69i57j0l3j69i64.8143j1j7&sourceid=chrome&ie=UTF-8
+
+codedge/laravel-fpdf:
+  https://packagist.org/packages/codedge/laravel-fpdf
+
+setasign/fpdf:
+  https://packagist.org/packages/setasign/fpdf
+
+codedge/laravel-fpdf
+  https://github.com/codedge/laravel-fpdf
+
+FatalErrorException Class 'Codedge\Fpdf\FpdfServiceProvider' not found
+  https://stackoverflow.com/questions/49702092/fatalerrorexception-class-codedge-fpdf-fpdfserviceprovider-not-found
+
+php laravel fpdf
+  https://stackoverflow.com/search?q=php+laravel+fpdf
+
+

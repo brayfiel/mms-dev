@@ -29,6 +29,7 @@ mix.scripts([
     'resources/js/sb-admin-2.js',
     'resources/js/metisMenu.js',
     // 'resources/js/scripts.js'
+    'resources/js/zipcode.js',
 ], 'public/js/libs.js');
 
 mix.copy('resources/fonts/fontawesome-webfont.eot', 'public/fonts/fontawesome-webfont.eot');
