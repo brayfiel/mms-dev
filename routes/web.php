@@ -161,37 +161,36 @@ Route::group(
         // END:   ^ ^ ^ Routes for /maintenance/state ^ ^ ^
         // =======================================================
         // BEGIN: V V V Routes for /maintenance/zipcode V V V
-        Route::get(
-            '/maintenance/zipcode/printall/{order}',
-            'ZipCodeController@printAll'
-        )->name('zipcode.printall');
-        Route::get(
-            '/maintenance/zipcode/sortorder/{order}',
-            'ZipCodeController@setSortOrder'
-        )->name('zipcode.sortorder');
-        Route::get(
-            '/maintenance/zipcode/setsearch/',
-            'ZipCodeController@setSearch'
-        )->name('zipcode.setSearch');
-        Route::resource('/maintenance/zipcode', 'ZipCodeController');
+        // Route::get(
+        //     '/maintenance/zipcode/printall/{order}',
+        //     'ZipCodeController@printAll'
+        // )->name('zipcode.printall');
+        // Route::get(
+        //     '/maintenance/zipcode/sortorder/{order}',
+        //     'ZipCodeController@setSortOrder'
+        // )->name('zipcode.sortorder');
+        // Route::get(
+        //     '/maintenance/zipcode/setsearch/',
+        //     'ZipCodeController@setSearch'
+        // )->name('zipcode.setSearch');
+        // Route::resource('/maintenance/zipcode', 'ZipCodeController');
         // END:   ^ ^ ^ Routes for /maintenance/zipcode ^ ^ ^
         // =======================================================
         // BEGIN: V V V Routes for /maintenance/organization V V V
         Route::get(
-            '/maintenance/organization/printAll',
+            '/maintenance/organization/printall',
             'OrganizationController@printAll'
         )->name('organization.printall');
+        Route::resource('/maintenance/organization', 'OrganizationController');
+        // END:   ^ ^ ^ Routes for /maintenance/organization ^ ^ ^
+        // =======================================================
+        // BEGIN: V V V Routes for /maintenance/yahrzeit V V V
         Route::get(
-            '/maintenance/organization/',
-            'OrganizationController@index'
-        )->name('organization.index');
-        Route::match(
-            ['put', 'patch'],
-            '/maintenance/organization/{organization}',
-            'OrganizationController@update'
-        )->name('organization.update');
-        // Route::resource('/maintenance/organization', 'OrganizationController');
-        // END:   ^ ^ ^ Routes for /maintenance/zipcode ^ ^ ^
+            '/maintenance/yahrzeit/printall',
+            'YahrzeitController@printAll'
+        )->name('yahrzeit.printall');
+        Route::resource('/maintenance/yahrzeit', 'YahrzeitController');
+        // END:   ^ ^ ^ Routes for /maintenance/yahrzeit ^ ^ ^
         // =======================================================
         Route::get('/membership', 'MMS@membershipIndex');
         Route::get('/permanentpews', 'MMS@permanentPewIndex');

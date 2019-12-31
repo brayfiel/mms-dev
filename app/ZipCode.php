@@ -71,14 +71,14 @@ class ZipCode extends Model
         return $this->belongsTo('App\User', 'last_editted_by_id');
     }
 
-    /**
-     * Lookup and return MMS Global record based on the id
-     *
-     * @return user record
-     */
-    public function mmsGlobals()
-    {
-        return $this->hasMany('App\MmsGlobal');
-    }
+    // /**
+    //  * Lookup and return MMS Global record based on the id
+    //  *
+    //  * @return user record
+    //  */
+    // public function mmsGlobals()
+    // {
+    //     return $this->hasMany('App\MmsGlobal');
+    // }
 }
 

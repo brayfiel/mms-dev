@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
         DB::table('surnames')->truncate();
         DB::table('users')->truncate();
         DB::table('vip_codes')->truncate();
-        DB::table('zip_codes')->truncate();
+        // DB::table('zip_codes')->truncate();
         DB::table('Members')->truncate();
         DB::table('Member_Addresses')->truncate();
         DB::table('Member_Names')->truncate();
@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(VIPCodesTableSeeder::class);
         $this->call(LogsTableSeeder::class);
-        $this->call(ZipCodesTableSeeder::class);
+        // $this->call(ZipCodesTableSeeder::class);
         $this->call(MemberTableSeeder::class);
         $this->call(MemberAddressTableSeeder::class);
         $this->call(MemberNameTableSeeder::class);

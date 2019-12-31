@@ -28,13 +28,14 @@ class MmsGlobal extends Model
 {
     protected $fillable = [
         'app_name',
+        'app_name_abbrev',
         'org_name',
         'org_name_abbrev',
         'address_1',
         'address_2',
         'city',
         'state_id',
-        'zip_code_id',
+        'zip_code',
         'zip_code_ext',
         'telephone',
         'email',
@@ -59,15 +60,15 @@ class MmsGlobal extends Model
         return $this->belongsTo('App\State');
     }
 
-    /**
-     * Lookup and return Zip Code record based on the zip_code_id
-     *
-     * @return zipcode record
-     */
-    public function zipCode()
-    {
-        return $this->belongsTo('App\ZipCode');
-    }
+    // /**
+    //  * Lookup and return Zip Code record based on the zip_code_id
+    //  *
+    //  * @return zipcode record
+    //  */
+    // public function zipCode()
+    // {
+    //     return $this->belongsTo('App\ZipCode');
+    // }
 
     /**
      * Lookup and return User record based on the created_by_id

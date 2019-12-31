@@ -56,10 +56,12 @@ class CreateMemberAddressesTable extends Migration
                     ->unsigned()
                     ->nullable()
                     ->comment('Pointer to state table.');
-                $table->bigInteger('zip_code_id')
-                    ->unsigned()
+                $table->string('zip_code')
                     ->nullable()
-                    ->comment('Pointer to zip code table.');
+                    ->comment('Member address zip code.');
+                $table->string('zip_code_ext')
+                    ->nullable()
+                    ->comment('Member address zip code extension.');
                 $table->bigInteger('mailing_class_id')
                     ->unsigned()
                     ->nullable()

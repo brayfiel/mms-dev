@@ -69,9 +69,9 @@
                             <a class="dropdown-item text-primary" href="{{ url('/maintenance/state') }}">
                                 States
                             </a>
-                            <a class="dropdown-item text-primary" href="{{ url('/maintenance/zipcode') }}">
-                                Zip Code
-                            </a>
+                            {{-- <a class="dropdown-item text-primary" href="{{ url('/maintenance/zipcode') }}"> --}}
+                                {{-- Zip Code --}}
+                            {{-- </a> --}}
                             <a class="dropdown-item text-primary" href="{{ url('/maintenance/organization') }}">
                                 Organization Configuration
                             </a>

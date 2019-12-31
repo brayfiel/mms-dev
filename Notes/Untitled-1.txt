@@ -17,3 +17,126 @@ php laravel fpdf
   https://stackoverflow.com/search?q=php+laravel+fpdf
 
 
+PS D:\wwwroot\mms\dev> php artisan route:list                                                                                                                              +--------+-----------+------------------------------------------------------+----------------------------+------------------------------------------------------------------------+--------------+
+| Domain | Method    | URI                                                  | Name                       | Action                                                                 | Middleware   |
++--------+-----------+------------------------------------------------------+----------------------------+------------------------------------------------------------------------+--------------+
+|        | GET|HEAD  | /                                                    |                            | Closure                                                                | web          |
+|        | GET|HEAD  | api/user                                             |                            | Closure                                                                | api,auth:api |
+|        | GET|HEAD  | calendar                                             |                            | App\Http\Controllers\MMS@calendarIndex                                 | web          |
+|        | GET|HEAD  | highholidaytickets                                   |                            | App\Http\Controllers\MMS@highHolidayTicketsIndex                       | web          |
+|        | GET|HEAD  | home                                                 | home                       | App\Http\Controllers\HomeController@index                              | web,auth     |
+|        | GET|HEAD  | inactive                                             |                            | Closure                                                                | web          |
+|        | GET|HEAD  | login                                                | login                      | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST      | login                                                |                            | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+|        | POST      | logout                                               | logout                     | App\Http\Controllers\Auth\LoginController@logout                       | web          |
+|        | GET|HEAD  | maintenance                                          |                            | App\Http\Controllers\MMS@maintenanceIndex                              | web          |
+|        | POST      | maintenance/mailingclass                             | mailingclass.store         | App\Http\Controllers\MailingClassController@store                      | web          |
+|        | GET|HEAD  | maintenance/mailingclass                             | mailingclass.index         | App\Http\Controllers\MailingClassController@index                      | web          |
+|        | GET|HEAD  | maintenance/mailingclass/create                      | mailingclass.create        | App\Http\Controllers\MailingClassController@create                     | web          |
+|        | GET|HEAD  | maintenance/mailingclass/printall/{order}            | mailingclass.printall      | App\Http\Controllers\MailingClassController@printAll                   | web          |
+|        | GET|HEAD  | maintenance/mailingclass/setsearch                   | mailingclass.setSearch     | App\Http\Controllers\MailingClassController@setSearch                  | web          |
+|        | GET|HEAD  | maintenance/mailingclass/sortorder/{order}           | mailingclass.sortorder     | App\Http\Controllers\MailingClassController@setSortOrder               | web          |
+|        | GET|HEAD  | maintenance/mailingclass/{mailingclass}              | mailingclass.show          | App\Http\Controllers\MailingClassController@show                       | web          |
+|        | PUT|PATCH | maintenance/mailingclass/{mailingclass}              | mailingclass.update        | App\Http\Controllers\MailingClassController@update                     | web          |
+|        | DELETE    | maintenance/mailingclass/{mailingclass}              | mailingclass.destroy       | App\Http\Controllers\MailingClassController@destroy                    | web          |
+|        | GET|HEAD  | maintenance/mailingclass/{mailingclass}/edit         | mailingclass.edit          | App\Http\Controllers\MailingClassController@edit                       | web          |
+|        | GET|HEAD  | maintenance/membershipstatus                         | membershipstatus.index     | App\Http\Controllers\MembershipStatusController@index                  | web          |
+|        | POST      | maintenance/membershipstatus                         | membershipstatus.store     | App\Http\Controllers\MembershipStatusController@store                  | web          |
+|        | GET|HEAD  | maintenance/membershipstatus/create                  | membershipstatus.create    | App\Http\Controllers\MembershipStatusController@create                 | web          |
+|        | GET|HEAD  | maintenance/membershipstatus/printall/{order}        | membershipstatus.printall  | App\Http\Controllers\MembershipStatusController@printAll               | web          |
+|        | GET|HEAD  | maintenance/membershipstatus/setsearch               | membershipstatus.setSearch | App\Http\Controllers\MembershipStatusController@setSearch              | web          |
+|        | GET|HEAD  | maintenance/membershipstatus/sortorder/{order}       | membershipstatus.sortorder | App\Http\Controllers\MembershipStatusController@setSortOrder           | web          |
+|        | GET|HEAD  | maintenance/membershipstatus/{membershipstatus}      | membershipstatus.show      | App\Http\Controllers\MembershipStatusController@show                   | web          |
+|        | PUT|PATCH | maintenance/membershipstatus/{membershipstatus}      | membershipstatus.update    | App\Http\Controllers\MembershipStatusController@update                 | web          |
+|        | DELETE    | maintenance/membershipstatus/{membershipstatus}      | membershipstatus.destroy   | App\Http\Controllers\MembershipStatusController@destroy                | web          |
+|        | GET|HEAD  | maintenance/membershipstatus/{membershipstatus}/edit | membershipstatus.edit      | App\Http\Controllers\MembershipStatusController@edit                   | web          |
+|        | GET|HEAD  | maintenance/membershiptype                           | membershiptype.index       | App\Http\Controllers\MembershipTypeController@index                    | web          |
+|        | POST      | maintenance/membershiptype                           | membershiptype.store       | App\Http\Controllers\MembershipTypeController@store                    | web          |
+|        | GET|HEAD  | maintenance/membershiptype/create                    | membershiptype.create      | App\Http\Controllers\MembershipTypeController@create                   | web          |
+|        | GET|HEAD  | maintenance/membershiptype/printall/{order}          | membershiptype.printall    | App\Http\Controllers\MembershipTypeController@printAll                 | web          |
+|        | GET|HEAD  | maintenance/membershiptype/setsearch                 | membershiptype.setSearch   | App\Http\Controllers\MembershipTypeController@setSearch                | web          |
+|        | GET|HEAD  | maintenance/membershiptype/sortorder/{order}         | membershiptype.sortorder   | App\Http\Controllers\MembershipTypeController@setSortOrder             | web          |
+|        | PUT|PATCH | maintenance/membershiptype/{membershiptype}          | membershiptype.update      | App\Http\Controllers\MembershipTypeController@update                   | web          |
+|        | DELETE    | maintenance/membershiptype/{membershiptype}          | membershiptype.destroy     | App\Http\Controllers\MembershipTypeController@destroy                  | web          |
+|        | GET|HEAD  | maintenance/membershiptype/{membershiptype}          | membershiptype.show        | App\Http\Controllers\MembershipTypeController@show                     | web          |
+|        | GET|HEAD  | maintenance/membershiptype/{membershiptype}/edit     | membershiptype.edit        | App\Http\Controllers\MembershipTypeController@edit                     | web          |
+|        | GET|HEAD  | maintenance/organization                             | organization.index         | App\Http\Controllers\OrganizationController@index                      | web          |
+|        | POST      | maintenance/organization                             | organization.store         | App\Http\Controllers\OrganizationController@store                      | web          |
+|        | GET|HEAD  | maintenance/organization/create                      | organization.create        | App\Http\Controllers\OrganizationController@create                     | web          |
+|        | GET|HEAD  | maintenance/organization/printAll                    | organization.printall      | App\Http\Controllers\OrganizationController@printAll                   | web          |
+|        | DELETE    | maintenance/organization/{organization}              | organization.destroy       | App\Http\Controllers\OrganizationController@destroy                    | web          |
+|        | GET|HEAD  | maintenance/organization/{organization}              | organization.show          | App\Http\Controllers\OrganizationController@show                       | web          |
+|        | PUT|PATCH | maintenance/organization/{organization}              | organization.update        | App\Http\Controllers\OrganizationController@update                     | web          |
+|        | GET|HEAD  | maintenance/organization/{organization}/edit         | organization.edit          | App\Http\Controllers\OrganizationController@edit                       | web          |
+|        | POST      | maintenance/phonetype                                | phonetype.store            | App\Http\Controllers\PhoneTypeController@store                         | web          |
+|        | GET|HEAD  | maintenance/phonetype                                | phonetype.index            | App\Http\Controllers\PhoneTypeController@index                         | web          |
+|        | GET|HEAD  | maintenance/phonetype/create                         | phonetype.create           | App\Http\Controllers\PhoneTypeController@create                        | web          |
+|        | GET|HEAD  | maintenance/phonetype/printall/{order}               | phonetype.printall         | App\Http\Controllers\PhoneTypeController@printAll                      | web          |
+|        | GET|HEAD  | maintenance/phonetype/setsearch                      | phonetype.setSearch        | App\Http\Controllers\PhoneTypeController@setSearch                     | web          |
+|        | GET|HEAD  | maintenance/phonetype/sortorder/{order}              | phonetype.sortorder        | App\Http\Controllers\PhoneTypeController@setSortOrder                  | web          |
+|        | DELETE    | maintenance/phonetype/{phonetype}                    | phonetype.destroy          | App\Http\Controllers\PhoneTypeController@destroy                       | web          |
+|        | PUT|PATCH | maintenance/phonetype/{phonetype}                    | phonetype.update           | App\Http\Controllers\PhoneTypeController@update                        | web          |
+|        | GET|HEAD  | maintenance/phonetype/{phonetype}                    | phonetype.show             | App\Http\Controllers\PhoneTypeController@show                          | web          |
+|        | GET|HEAD  | maintenance/phonetype/{phonetype}/edit               | phonetype.edit             | App\Http\Controllers\PhoneTypeController@edit                          | web          |
+|        | GET|HEAD  | maintenance/state                                    | state.index                | App\Http\Controllers\StateController@index                             | web          |
+|        | POST      | maintenance/state                                    | state.store                | App\Http\Controllers\StateController@store                             | web          |
+|        | GET|HEAD  | maintenance/state/create                             | state.create               | App\Http\Controllers\StateController@create                            | web          |
+|        | GET|HEAD  | maintenance/state/printall/{order}                   | state.printall             | App\Http\Controllers\StateController@printAll                          | web          |
+|        | GET|HEAD  | maintenance/state/setsearch                          | state.setSearch            | App\Http\Controllers\StateController@setSearch                         | web          |
+|        | GET|HEAD  | maintenance/state/sortorder/{order}                  | state.sortorder            | App\Http\Controllers\StateController@setSortOrder                      | web          |
+|        | DELETE    | maintenance/state/{state}                            | state.destroy              | App\Http\Controllers\StateController@destroy                           | web          |
+|        | PUT|PATCH | maintenance/state/{state}                            | state.update               | App\Http\Controllers\StateController@update                            | web          |
+|        | GET|HEAD  | maintenance/state/{state}                            | state.show                 | App\Http\Controllers\StateController@show                              | web          |
+|        | GET|HEAD  | maintenance/state/{state}/edit                       | state.edit                 | App\Http\Controllers\StateController@edit                              | web          |
+|        | GET|HEAD  | maintenance/suffix                                   | suffix.index               | App\Http\Controllers\SuffixController@index                            | web          |
+|        | POST      | maintenance/suffix                                   | suffix.store               | App\Http\Controllers\SuffixController@store                            | web          |
+|        | GET|HEAD  | maintenance/suffix/create                            | suffix.create              | App\Http\Controllers\SuffixController@create                           | web          |
+|        | GET|HEAD  | maintenance/suffix/printall/{order}                  | suffix.printall            | App\Http\Controllers\SuffixController@printAll                         | web          |
+|        | GET|HEAD  | maintenance/suffix/setsearch                         | suffix.setSearch           | App\Http\Controllers\SuffixController@setSearch                        | web          |
+|        | GET|HEAD  | maintenance/suffix/sortorder/{order}                 | suffix.sortorder           | App\Http\Controllers\SuffixController@setSortOrder                     | web          |
+|        | GET|HEAD  | maintenance/suffix/{suffix}                          | suffix.show                | App\Http\Controllers\SuffixController@show                             | web          |
+|        | PUT|PATCH | maintenance/suffix/{suffix}                          | suffix.update              | App\Http\Controllers\SuffixController@update                           | web          |
+|        | DELETE    | maintenance/suffix/{suffix}                          | suffix.destroy             | App\Http\Controllers\SuffixController@destroy                          | web          |
+|        | GET|HEAD  | maintenance/suffix/{suffix}/edit                     | suffix.edit                | App\Http\Controllers\SuffixController@edit                             | web          |
+|        | POST      | maintenance/surname                                  | surname.store              | App\Http\Controllers\SurnameController@store                           | web          |
+|        | GET|HEAD  | maintenance/surname                                  | surname.index              | App\Http\Controllers\SurnameController@index                           | web          |
+|        | GET|HEAD  | maintenance/surname/create                           | surname.create             | App\Http\Controllers\SurnameController@create                          | web          |
+|        | GET|HEAD  | maintenance/surname/printall/{order}                 | surname.printall           | App\Http\Controllers\SurnameController@printAll                        | web          |
+|        | GET|HEAD  | maintenance/surname/setsearch                        | surname.setSearch          | App\Http\Controllers\SurnameController@setSearch                       | web          |
+|        | GET|HEAD  | maintenance/surname/sortorder/{order}                | surname.sortorder          | App\Http\Controllers\SurnameController@setSortOrder                    | web          |
+|        | GET|HEAD  | maintenance/surname/{surname}                        | surname.show               | App\Http\Controllers\SurnameController@show                            | web          |
+|        | DELETE    | maintenance/surname/{surname}                        | surname.destroy            | App\Http\Controllers\SurnameController@destroy                         | web          |
+|        | PUT|PATCH | maintenance/surname/{surname}                        | surname.update             | App\Http\Controllers\SurnameController@update                          | web          |
+|        | GET|HEAD  | maintenance/surname/{surname}/edit                   | surname.edit               | App\Http\Controllers\SurnameController@edit                            | web          |
+|        | POST      | maintenance/vipcode                                  | vipcode.store              | App\Http\Controllers\VIPCodeController@store                           | web          |
+|        | GET|HEAD  | maintenance/vipcode                                  | vipcode.index              | App\Http\Controllers\VIPCodeController@index                           | web          |
+|        | GET|HEAD  | maintenance/vipcode/create                           | vipcode.create             | App\Http\Controllers\VIPCodeController@create                          | web          |
+|        | GET|HEAD  | maintenance/vipcode/printall/{order}                 | vipcode.printall           | App\Http\Controllers\VIPCodeController@printAll                        | web          |
+|        | GET|HEAD  | maintenance/vipcode/setsearch                        | vipcode.setSearch          | App\Http\Controllers\VIPCodeController@setSearch                       | web          |
+|        | GET|HEAD  | maintenance/vipcode/sortorder/{order}                | vipcode.sortorder          | App\Http\Controllers\VIPCodeController@setSortOrder                    | web          |
+|        | GET|HEAD  | maintenance/vipcode/{vipcode}                        | vipcode.show               | App\Http\Controllers\VIPCodeController@show                            | web          |
+|        | PUT|PATCH | maintenance/vipcode/{vipcode}                        | vipcode.update             | App\Http\Controllers\VIPCodeController@update                          | web          |
+|        | DELETE    | maintenance/vipcode/{vipcode}                        | vipcode.destroy            | App\Http\Controllers\VIPCodeController@destroy                         | web          |
+|        | GET|HEAD  | maintenance/vipcode/{vipcode}/edit                   | vipcode.edit               | App\Http\Controllers\VIPCodeController@edit                            | web          |
+|        | POST      | maintenance/zipcode                                  | zipcode.store              | App\Http\Controllers\ZipCodeController@store                           | web          |
+|        | GET|HEAD  | maintenance/zipcode                                  | zipcode.index              | App\Http\Controllers\ZipCodeController@index                           | web          |
+|        | GET|HEAD  | maintenance/zipcode/create                           | zipcode.create             | App\Http\Controllers\ZipCodeController@create                          | web          |
+|        | GET|HEAD  | maintenance/zipcode/printall/{order}                 | zipcode.printall           | App\Http\Controllers\ZipCodeController@printAll                        | web          |
+|        | GET|HEAD  | maintenance/zipcode/setsearch                        | zipcode.setSearch          | App\Http\Controllers\ZipCodeController@setSearch                       | web          |
+|        | GET|HEAD  | maintenance/zipcode/sortorder/{order}                | zipcode.sortorder          | App\Http\Controllers\ZipCodeController@setSortOrder                    | web          |
+|        | GET|HEAD  | maintenance/zipcode/{zipcode}                        | zipcode.show               | App\Http\Controllers\ZipCodeController@show                            | web          |
+|        | PUT|PATCH | maintenance/zipcode/{zipcode}                        | zipcode.update             | App\Http\Controllers\ZipCodeController@update                          | web          |
+|        | DELETE    | maintenance/zipcode/{zipcode}                        | zipcode.destroy            | App\Http\Controllers\ZipCodeController@destroy                         | web          |
+|        | GET|HEAD  | maintenance/zipcode/{zipcode}/edit                   | zipcode.edit               | App\Http\Controllers\ZipCodeController@edit                            | web          |
+|        | GET|HEAD  | membership                                           |                            | App\Http\Controllers\MMS@membershipIndex                               | web          |
+|        | GET|HEAD  | noaccess                                             |                            | Closure                                                                | web          |
+|        | POST      | password/email                                       | password.email             | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest    |
+|        | GET|HEAD  | password/reset                                       | password.request           | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest    |
+|        | POST      | password/reset                                       | password.update            | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest    |
+|        | GET|HEAD  | password/reset/{token}                               | password.reset             | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest    |
+|        | GET|HEAD  | permanentpews                                        |                            | App\Http\Controllers\MMS@permanentPewIndex                             | web          |
+|        | POST      | register                                             |                            | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
+|        | GET|HEAD  | register                                             | register                   | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
+|        | GET|HEAD  | yizcor                                               |                            | App\Http\Controllers\MMS@yizcorIndex                                   | web          |
++--------+-----------+------------------------------------------------------+----------------------------+------------------------------------------------------------------------+--------------+
+PS D:\wwwroot\mms\dev>

@@ -40,7 +40,7 @@ class AddConstraintsToMemberAddressesTable extends Migration
                     ->references('id')
                     ->on('members');
                 $table->foreign('state_id')->references('id')->on('states');
-                $table->foreign('zip_code_id')->references('id')->on('zip_codes');
+                // $table->foreign('zip_code_id')->references('id')->on('zip_codes');
                 $table->foreign('mailing_class_id')
                     ->references('id')
                     ->on('mailing_classes');
@@ -61,7 +61,7 @@ class AddConstraintsToMemberAddressesTable extends Migration
             'member_addresses', function (Blueprint $table) {
                 $table->dropForeign('member_addresses_member_id_foreign');
                 $table->dropForeign('member_addresses_state_id_foreign');
-                $table->dropForeign('member_addresses_zip_code_id_foreign');
+                // $table->dropForeign('member_addresses_zip_code_id_foreign');
                 $table->dropForeign('member_addresses_mailing_class_id_foreign');
                 $table->dropForeign('member_addresses_created_by_id_foreign');
                 $table->dropForeign('member_addresses_last_editted_by_id_foreign');
