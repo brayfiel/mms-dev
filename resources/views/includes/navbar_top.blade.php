@@ -75,7 +75,7 @@
                             <a class="dropdown-item text-primary" href="{{ url('/maintenance/organization') }}">
                                 Organization Configuration
                             </a>
-                            <a class="dropdown-item text-primary" href="{{ url('mailingClassIndex') }}">
+                            <a class="dropdown-item text-primary" href="{{ url('/maintenance/yahrzeit') }}">
                                 Yahrzeit Configuration
                             </a>
                             <a class="dropdown-item text-primary" href="{{ url('mailingClassIndex') }}">
