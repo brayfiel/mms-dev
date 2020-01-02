@@ -78,12 +78,12 @@
                             <a class="dropdown-item text-primary" href="{{ url('/maintenance/yahrzeit') }}">
                                 Yahrzeit Configuration
                             </a>
-                            <a class="dropdown-item text-primary" href="{{ url('mailingClassIndex') }}">
+                            <a class="dropdown-item text-primary" href="{{ url('/maintenance/misc') }}">
                                 Miscellaneous Configuration
                             </a>
-                            <a class="dropdown-item text-primary" href="{{ url('mailingClassIndex') }}">
+                            {{-- <a class="dropdown-item text-primary" href="{{ url('mailingClassIndex') }}">
                                 Import
-                            </a>
+                            </a> --}}
                             <a class="dropdown-item text-primary" href="{{ url('mailingClassIndex') }}">
                                 Logs
                             </a>

@@ -8,7 +8,7 @@
             <h2>
                 {{$mmsGlobal->org_name}} {{$mmsGlobal->app_name}}
                 <br>
-                Yahrzeit Configuration
+                Miscellaneous Configuration
             </h2>
         </div>
         <div class="col-sm-1 text-center">
@@ -51,51 +51,10 @@
         </div>
         <div class="row form-group">
             <div class="offset-sm-1 col-sm-4 pt-sm-1">
-                Last printed start date:
+                Year for Permanent Pew and High Holiday ticket processing:
             </div>
             <div class="col-sm-3">
-                {{$startDateOut}}
-            </div>
-        </div>
-        <div class="row form-group">
-            <div class="offset-sm-1 col-sm-4 pt-sm-1">
-                Last printed end date:
-            </div>
-            <div class="col-sm-3">
-                {{$endDateOut}}
-            </div>
-        </div>
-        <div class="row form-group">
-            <div class="offset-sm-1 col-sm-4 pt-sm-1">
-                Contact for services:
-            </div>
-            <div class="col-sm-6">
-                {{$mmsGlobal->yahrzeit_service_contact}}
-            </div>
-        </div>
-        <div class="row form-group">
-            <div class="offset-sm-1 col-sm-4 pt-sm-1">
-                Telephone #:
-            </div>
-            <div class="col-sm-3">
-                {{$telephone}}
-                {{-- {{$mmsGlobal->yahrzeit_service_contact_telephone}} --}}
-            </div>
-        </div>
-        <div class="row form-group">
-            <div class="offset-sm-1 col-sm-4 pt-sm-1">
-                Email Address:
-            </div>
-            <div class="col-sm-6">
-                {{$mmsGlobal->yahrzeit_service_contact_email}}
-            </div>
-        </div>
-        <div class="row form-group">
-            <div class="offset-sm-1 col-sm-4 pt-sm-1">
-                Lead time for Yahrzeit mailings:
-            </div>
-            <div class="col-sm-2">
-                {{$mmsGlobal->yahrzeit_lead_time}}
+                {{$mmsGlobal->permanent_pew_year}}
             </div>
         </div>
         <div class="row form-group">

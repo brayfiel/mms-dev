@@ -192,6 +192,14 @@ Route::group(
         Route::resource('/maintenance/yahrzeit', 'YahrzeitController');
         // END:   ^ ^ ^ Routes for /maintenance/yahrzeit ^ ^ ^
         // =======================================================
+        // BEGIN: V V V Routes for /maintenance/misc V V V
+        Route::get(
+            '/maintenance/misc/printall',
+            'MiscController@printAll'
+        )->name('misc.printall');
+        Route::resource('/maintenance/misc', 'MiscController');
+        // END:   ^ ^ ^ Routes for /maintenance/yahrzeit ^ ^ ^
+        // =======================================================
         Route::get('/membership', 'MMS@membershipIndex');
         Route::get('/permanentpews', 'MMS@permanentPewIndex');
         Route::get('/yizcor', 'MMS@yizcorIndex');

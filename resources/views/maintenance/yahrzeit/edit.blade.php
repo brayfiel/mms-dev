@@ -1,4 +1,4 @@
-@extends("layouts.maintenance.organization")
+@extends("layouts.maintenance.yahrzeit")
 
 @section("content")
 <div class="row">

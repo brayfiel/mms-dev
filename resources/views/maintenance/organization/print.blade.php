@@ -99,8 +99,6 @@
             </div>
             <div class="col-sm-6">
                 {{$telephone}}
-
-
             </div>
         </div>
         <div class="row form-group">
@@ -109,6 +107,42 @@
             </div>
             <div class="col-sm-6">
                 {{$mmsGlobal->email}}
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="offset-sm-1 col-sm-4 pt-sm-1">
+                Created By:
+            </div>
+            <div class="col-sm-6">
+                {{$mmsGlobal->createdBy->fullname()}} ({{$mmsGlobal->createdBy->email}})
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="offset-sm-1 col-sm-4 pt-sm-1">
+                Created On:
+            </div>
+            <div class="col-sm-3">
+                {{$mmsGlobal->created_at->format('m-d-Y')}}
+                at
+                {{$mmsGlobal->created_at->format('h:i:s a')}}
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="offset-sm-1 col-sm-4 pt-sm-1">
+                Updated By:
+            </div>
+            <div class="col-sm-6">
+                {{$mmsGlobal->lastEdittedBy->fullname()}} ({{$mmsGlobal->lastEdittedBy->email}})
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="offset-sm-1 col-sm-4 pt-sm-1">
+                Updated On:
+            </div>
+            <div class="col-sm-3">
+                {{$mmsGlobal->updated_at->format('m-d-Y')}}
+                at
+                {{$mmsGlobal->updated_at->format('h:i:s a')}}
             </div>
         </div>
     @endif

@@ -1,6 +1,7 @@
 <?php
 /**
- * Application controller to update the Yahrzeit data in the MmsGlobal table
+ * Application controller to update the Miscellaneous Config data
+ * in the MmsGlobal table
  * PHP version 7.3+
  *
  * @category Update_Data
@@ -18,7 +19,7 @@ use Illuminate\Http\Request;
 use App\MmsGlobal;
 
 /**
- * Controller class to update the Yahrzeit data in the MmsGlobal table
+ * Controller class to update the Organization data in the MmsGlobal table
  * PHP version 7.3+
  *
  * @category Update_Data
@@ -27,7 +28,7 @@ use App\MmsGlobal;
  * @license  To be determined
  * @link     To be determined
  */
-class YahrzeitController extends Controller
+class MiscController extends Controller
 {
     protected $pageSize = 10;
 
@@ -53,7 +54,7 @@ class YahrzeitController extends Controller
             $mmsGlobals = MmsGlobal::orderBy('id')->paginate($this->pageSize);
         }
         return view(
-            'maintenance.yahrzeit.index',
+            'maintenance.misc.index',
             compact('mmsGlobals', 'searchText', 'sortText')
         );
     }
@@ -94,13 +95,13 @@ class YahrzeitController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id id of record to be edited
-     *
+
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $yahrzeit = MmsGlobal::findOrFail($id);
-        return view('maintenance.yahrzeit.edit', compact('yahrzeit'));
+        $misc = MmsGlobal::findOrFail($id);
+        return view('maintenance.misc.edit', compact('misc'));
     }
 
     /**
@@ -108,7 +109,7 @@ class YahrzeitController extends Controller
      *
      * @param \Illuminate\Http\Request $request incoming updates from the blade
      * @param int                      $id      id of record to update
-
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -116,12 +117,7 @@ class YahrzeitController extends Controller
         $input = $request->all();
         if ($input['submit'] !== "Cancel") {
             // dd($input);
-            // "yahrzeit_last_printed_start" => null
-            // "yahrzeit_last_printed_end" => null
-            // "yahrzeit_service_contact" => null
-            // "yahrzeit_service_contact_telephone" => null
-            // "yahrzeit_service_contact_email" => null
-            // "yahrzeit_lead_time" => "1"
+            // "permanent_pew_year" => "2000"
 
             $input['last_editted_by_id'] = Auth::user()->id;
             try
@@ -162,7 +158,7 @@ class YahrzeitController extends Controller
                 }
             }
         }
-        return redirect(route('yahrzeit.index'));
+        return redirect(route('misc.index'));
     }
 
     // /**
@@ -184,35 +180,6 @@ class YahrzeitController extends Controller
     public function printAll()
     {
         $mmsGlobal = MmsGlobal::findOrFail(Auth::user()->mms_global_id);
-        $telephone = '';
-        if (strlen($mmsGlobal->yahrzeit_service_contact_telephone) > 6) {
-            $telephone = '('
-                . substr($mmsGlobal->yahrzeit_service_contact_telephone, 0, 3);
-            $telephone .= ') '
-                . substr($mmsGlobal->yahrzeit_service_contact_telephone, 3, 3);
-            $telephone .= ' - '
-                .substr($mmsGlobal->yahrzeit_service_contact_telephone, 6);
-        } elseif (strlen($mmsGlobal->yahrzeit_service_contact_telephone) > 3) {
-            $telephone = '('
-                . substr($mmsGlobal->yahrzeit_service_contact_telephone, 0, 3);
-            $telephone .= ') '
-                . substr($mmsGlobal->yahrzeit_service_contact_telephone, 3);
-        } elseif (strlen($mmsGlobal->yahrzeit_service_contact_telephone) > 0) {
-            $telephone = '(' . $mmsGlobal->yahrzeit_service_contact_telephone . ')';
-        } else {
-            $telephone = '';
-        }
-        $startDate = \DateTime::createFromFormat(
-            'Y-m-d', $mmsGlobal->yahrzeit_last_printed_start
-        );
-        $startDateOut = $startDate->format('F j, Y');
-        $endDate = \DateTime::createFromFormat(
-            'Y-m-d', $mmsGlobal->yahrzeit_last_printed_end
-        );
-        $endDateOut = $endDate->format('F j, Y');
-        return view(
-            'maintenance.yahrzeit.print',
-            compact('mmsGlobal', 'telephone', 'startDateOut', 'endDateOut')
-        );
+        return view('maintenance.misc.print', compact('mmsGlobal'));
     }
 }
